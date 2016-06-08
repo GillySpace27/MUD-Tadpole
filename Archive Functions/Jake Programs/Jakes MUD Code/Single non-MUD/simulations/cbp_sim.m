@@ -1,0 +1,75 @@
+% this program simulates two heavily chirped pulses interfering with each
+% other in time:
+clear
+c=300;
+Nl=8000;
+lmax=850;
+lmin=750;
+dl=(lmax-lmin)/Nl;
+lam=lmin:dl:lmax;
+w=equally_spaced_w(lam);
+w0=median(w);
+lam0=804.5;
+dw=abs(mean(diff(w)));
+dlam=5.5;
+Elam=exp(-(lam-lam0).^2/(2*dlam^2));
+bw=2*pi*c/(lam0^2)*dlam;
+% the time axis is:
+tau0=13.46e3;
+t=wtot(w)+tau0;
+% the chirp value is
+beta=-185000;
+% the time delay is 1ps:
+tau=-26000;
+%tau=27000;
+c1=0*sqrt(595/754);
+% [alpha,beta]=cpb_param(t_fwhm,b);
+A=exp(-(w-w0).^2/(2*bw^2));
+A1=A.*exp(i*(w-w0).^2*beta);
+A2=c1*A1.*exp(-i*(w-w0)*tau);
+
+% the signal is:
+Ew=fliplr(A1+A2);
+Et=(fftc(Ew));
+% adding the response of the spectrometer
+% dl=.005;
+% dw=2*pi*c/lam0^2*dl;
+% H=exp(-((w-w0)/(sqrt(2)*1*dw)).^2);
+% the measured intensity is:
+Im=Norm(abs(Et).^2);
+[I2]=Norm(sub_bg3(Im,0));
+% figure;
+% % plotting the initial pulse:
+% plot(t,Norm(abs(fftc(abs(A1))).^2))
+% xlabel('Time (fs)','fontsize',15);
+% ylabel('Intensity','fontsize',15);
+% title('Temporal profile of the initial pulse before the compressor','fontsize',15);
+
+% plotting the chirped pulse:
+%plot(lam,Norm(abs(Elam).^2))
+[width_lam]=fwhm(Norm(abs(Elam).^2),mean(abs(diff(lam))))
+plot5yy(t*1e-3,I2,unwrap(angle(Et))+2770,'time');
+[width_t]=fwhm(Im,mean(abs(diff(t))))
+
+% figure;
+% % plotting the spectrum:
+% plot(lam,Norm(abs(A1).^2));
+% xlabel('Wavelength (fnm)','fontsize',15);
+% ylabel('Intensity','fontsize',15);
+% title('Spectrum of the initial pulse before the compressor','fontsize',15);
+% 
+% plot(lam,abs(Ew).^2);
+% title('The spectrum');
+% xlabel('Wavelength (nm)');
+% plot(lam,abs(Ew).^2);
+% xlabel('Wavelength (nm)','fontsize',15);
+% ylabel('Intensity','fontsize',15);
+% title('Spectrum of a 50 ps chirped double pulse','fontsize',15);
+%plot4yy(t*1e-3,abs(Et).^2,unwrap(angle(Et))-800,'The temporal profile of a 50 ps chirped double pulse','time');
+%plot(abs(fftc(abs(Ew).^2)))
+% It=abs(fftc(Ew)).^2;
+% plotyy(t,It,t,unwrap(angle(It)))
+% xlabel('Time (fs)');
+% title('Temporal profile')
+fwhm(abs(Et).^2,mean(abs(diff(t))))
+

@@ -1,0 +1,90 @@
+﻿<html>
+	
+<head>
+	<title>MUD Tadpole: Where the magic happens</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.7.1.684">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "MUD Tadpole Experiment.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("MUDTadpoleWherethemagichappens");
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">MUD Tadpole: Where the magic happens</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Introduction.html">Introduction</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Introduction.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="ThebasicsSEATadpole.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="GettingStarted.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps5"><span class="rvts0"><span class="rvts14">MUD Tadpole</span></span></h1>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/MUD Tadpole.jpg"></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts6">With MUD Tadpole, we are essentially taking a series of SEA Tadpole traces at set intervals. The input to our system is actually a train of (allegedly) identical pulses, and there are about 1 million actual superpositions happening every second. &nbsp;What we do is delay the reference pulse with respect to the unknown pulse and take multiple cross sections. That way we can overlap our small reference pulse over every part of the unknown pulse. Each of these traces contains information about one piece of the pulse. </span><span class="rvts18">(continues below)</span></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img width="864" height="1002" alt="" style="padding : 1px;" src="lib/MUD Cross Sections.png"></p>
+<p class="rvps2"><span class="rvts18"><br/></span></p>
+<p class="rvps2"><span class="rvts6">By taking many traces, we can fully reconstruct the original unknown pulse. These individual traces are concatenated, and some fancy math goes into making sure that the slices are merged smoothly (look in </span><span class="rvts17">temporal_interleaving.m</span><span class="rvts6">).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Temporal Concatenated1.png"></p>
+<p class="rvps6"><span class="rvts15">This pulse was able to be imaged with only 3 traces, superimposed here. This plot can be created by enabling the plot loop near line 40</span><span class="rvts16"> </span><span class="rvts15">in the </span><span class="rvts16">best_concat_mud.m </span><span class="rvts15">file.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The program outputs all of the information about the pulse in both the spectral and temporal domains. In the plot below, the blue line is a simulated pulse, and the red line is the MUD Tadpole's retrieved pulse. They show excellent agreement except for a time delay of exactly one timestep, a trivial bug (the reference frame is arbitrary) that may be addressed in the future if desired.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img width="1032" height="595" alt="" style="padding : 1px;" src="lib/Reconstruction1.png"></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour">Easily create HTML Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

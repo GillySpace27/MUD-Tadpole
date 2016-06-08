@@ -1,0 +1,122 @@
+﻿<html>
+	
+<head>
+	<title>MUD_MAIN</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.7.1.684">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "MUD Tadpole Experiment.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("MUD_MAIN");
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">MUD_MAIN</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GettingStarted.html">Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="GettingStarted.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="FolderStructure.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps5"><span class="rvts0"><span class="rvts13">MUD_MAIN</span></span></h1>
+<p class="rvps2"><span class="rvts6">Your home base is 'MUD_MAIN.m'. Here's whats going on:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This main() function has four tasks. &nbsp;</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">It acquires the reference trace: REF</span></li>
+<li class="rvps2"><span class="rvts6">It acquires the array of cross sections: MUDPIX</span></li>
+<li class="rvps2"><span class="rvts6">It analyzes each cross section and extracts its spectrum and spectral phase: MUDDAT</span></li>
+<li class="rvps2"><span class="rvts6">It intelligently concatenates all of the cross sections into a single pulse: PULSE</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This function is used for both the experiment and the simulation, switched by the parameter 'Simulate'</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">PARAMETERS</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Simulate (Logical)</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This selects whether you want to use simulated data or live experimental data. </span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">Plots (Logical)</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Putting a 'true' here will cause tons of useful plots to run. They show the state of the data at several crucial points along the pathway. You may want to turn them on one at a time to see where each one comes from.</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">SaveMUDPIX (Logical)</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">A 'true' here will cause the program to write the images taken by the camera to disk. </span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">MUDPIX_filename (String)</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This will be the name of the file with the pictures.</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">MP_filetype (String)</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">Three possible inputs</span></li>
+<li class="rvps2"><span class="rvts6">'bmp'</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li class="rvps2"><span class="rvts6">Saves each image as an individual bitmap file, with an index appended to the file name.</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">'gif'</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li class="rvps2"><span class="rvts6">Saves all the images as a single animated gif.</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">'both'</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li class="rvps2"><span class="rvts6">Does both.</span></li>
+</ul></ul></ul>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/create-epub-ebooks">Free EPub producer</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

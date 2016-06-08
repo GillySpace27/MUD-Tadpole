@@ -1,0 +1,6 @@
+Store stage locatuon for each pic
+take stage pso -> make delay -> linear phase -> puts it in correct location
+
+THEN you take the weighted average of the temporal phase with the gate intensity as the weight
+
+Then concatinate, cutting each one at 1/2 scan resolution

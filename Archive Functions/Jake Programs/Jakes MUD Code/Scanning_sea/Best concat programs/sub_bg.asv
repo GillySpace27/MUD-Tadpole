@@ -1,0 +1,29 @@
+% this function subtracts background from a 
+% retreived E(w) and then returns the subtracted 
+% E(w)
+% x_c1 = first cropped value where the spectrum is zero
+% x_c2 = secodn cropped value where the spectrum is zero
+% w_eq = equally spaced spectrum
+% x2 = the and value of the region where the noise occurs
+% Ew1 = retrieved 
+% n_zero = the index value of the spectra that is all noise, ie the
+% reference pulse did not retrieve anything
+
+function [Ew2,w1]=sub_bg(Ew,x_c1,x_c1,w_eq,x2,n_zero)
+% cropping the retrieved spectra:
+Ew1=Ew(x_c1:x_c2,:);
+w1=
+
+amp=abs(Ew1);
+phase1=angle(Ew1);
+amp_z=amp-max(amp(1:x2,n_zero));
+% getting rid of the negative terms:
+a=find(amp_z<0);
+amp_z(a)=0;
+% Gets rid of the max values:
+ymax=max(amp_z(:,n_zero));
+amp_z=amp_z-ymax;
+a=find(amp_z<0);
+amp_z(a)=0;
+% Putting the fields back together:
+Ew2=amp_z.*exp(i*phase1);

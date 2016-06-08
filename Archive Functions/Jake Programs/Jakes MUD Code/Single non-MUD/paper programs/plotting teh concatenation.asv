@@ -1,0 +1,17 @@
+% this function is used to plot the pre-concatenation amplitudes in time
+
+[Et1]=new_concat2(Valid_unk,Valid_H,tw,x,offset);
+% the length of each vector will be
+L=size(Et1,1);
+% the sampled vectors will be:
+N=25;
+dx=floor(L/N);
+x=1:dx:L;
+% the size of each vector is:
+n=size(amp,1);
+% getting the samples
+for (k=1:N)
+    a1(:,k)=amp(:,k*dx);
+end
+    % making the sampled terms fit the entire window
+    a2(:,k)=cat(1,a1,[1:L-k*

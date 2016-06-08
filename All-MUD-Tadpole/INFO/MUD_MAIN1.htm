@@ -1,0 +1,68 @@
+﻿<html>
+	
+<head>
+	<title>MUD_MAIN</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.7.1.684">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/chmRelative.js"></script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1>MUD_MAIN</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Workflow.htm">Workflow</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Workflow.htm"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Workflow.htm"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Temporal_Interleave.htm"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps5"><span class="rvts0"><span class="rvts13">MUD_MAIN</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">First, the MUDPIX and REF objects are either captured or simulated.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These are then passed to </span><span class="rvts17">extract_MUDPIX</span><span class="rvts6">, which generates the MUDDAT object. This is the program that analyzes the raw traces and extracts the usable data from them.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">If there is only a single trace, MUDDAT is given to </span><span class="rvts17">sea_extract_MUDDAT</span><span class="rvts6">, which returns the PULSE.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">If there are two or more traces, MUDDAT is passed to </span><span class="rvts17">temporal_interleave</span><span class="rvts6">, which returns the PULSE.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour">Easily create EPub books</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

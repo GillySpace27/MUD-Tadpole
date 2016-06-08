@@ -1,0 +1,21 @@
+% this function mulitplies the retrieved temporal amplitude by:
+% a window function 
+
+function [U_win,g]=window(U1,tw,N)
+Nt=size(U1,1);
+U_win=zeros(size(U1));
+for k=1:N
+    t1(k)=tw*(k-1-N/2);
+end
+for k=1:N
+    z(k+1)=round(Nt/2)+t1(k);
+end
+z(1)=1;
+z(N+1)=Nt;
+z=round(z);
+for k=1:N
+    if k==1
+        U_win([z(k):z(k+1)+tw/5],k)=U1([z(k):z(k+1)],k);
+end
+% for the offset program:
+g=(z(2:end-1));

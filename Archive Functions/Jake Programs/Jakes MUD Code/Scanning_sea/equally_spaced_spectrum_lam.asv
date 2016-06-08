@@ -1,0 +1,24 @@
+% this function recalibrates the retrieved spectrum in w
+% to make it evenly spaced in wavelength
+% B1 = evenly spaced spectrum and phase
+% lam = evenly spaced wavelength axis
+
+function [E_lam,lam_eq_new]=equally_spaced_spectrum_lam(w,B1,lam0)
+%w=w+ltow(lam0);
+%lam=fliplr(wtol(w));
+lam=wtol(w);
+lam_eq=equally_spaced_lam(w);
+spectrum=abs(B1);
+phi1 =(unwrap(angle(B1))); 
+%spectrum = (spectrum-spectrum(1));
+seq =interp1(lam, spectrum, lam_eq, 'cubic');
+phieq =interp1(lam, phi1, lam_eq, 'cubic');
+% zero filling
+n=100;
+if n~=0
+    phieq = [zeros(1,n) phieq(n:end-n) zeros(1,n)];
+    seq = [zeros(1,n) seq(n:end-n) zeros(1,n)];
+end
+
+E_lam = seq(1:end).*exp(-i*phieq(1:end));
+[lam_eq_new]=recal_axis(lam_eq,E_lam,1,length(lam_eq));

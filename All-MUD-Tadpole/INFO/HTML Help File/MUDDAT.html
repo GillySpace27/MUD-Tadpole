@@ -1,0 +1,117 @@
+﻿<html>
+	
+<head>
+	<title>MUDDAT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.7.1.684">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "MUD Tadpole Experiment.html?" + sTopicUrl;
+			}
+			else if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+			{
+				top.FrameTOC.SelectTocItem("MUDDAT");
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">MUDDAT</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Objects.html">Objects</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Objects.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="MUDPIX.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="PULSE.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps5"><span class="rvts0"><span class="rvts13">MUDDAT</span></span></h1>
+<p class="rvps2"><span class="rvts6">This file represents all of the information provided by the experiment, be it simulated or real. It contains the raw data from each cross section, and has been analyzed to extract the spectrum and the spectral phase.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This is 1xN structure array, where N is the number of cross section traces taken. It contains the following fields in common with MUDPIX:</span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Data</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This is the raw cross section</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">lam</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This is a vector labeling the wavelength axis</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">x</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This is a vector labeling the spacial axis</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">pos</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">This is a scalar value, the position of the delay stage in mm</span></li>
+</ul></ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">In addition to the following new fields:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">spec</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">The spectrum of the trace, with respect to lam</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">rawphi</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">The spectral phase difference between the reference pulse and the cross section of the unknown pulse. (For Debug Purposes)</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">phi</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">The spectral phase of the trace, with respect to lam</span></li>
+</ul>
+<li class="rvps2"><span class="rvts6">success</span></li>
+<ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li class="rvps2"><span class="rvts6">1 - if the algorithm was able to extract the spectrum/phase of this trace</span></li>
+<li class="rvps2"><span class="rvts6">0 - if the algorithm failed to extract the spectrum/phase of this trace</span></li>
+</ul></ul>
+<p></p>
+<p class="rvps4"><span class="rvts11">Created with the Personal Edition of HelpNDoc: </span><a class="rvts12" href="http://www.helpndoc.com/feature-tour">Easily create EBooks</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

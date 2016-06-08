@@ -1,0 +1,16 @@
+% making the wavelength axis
+N=200;
+lam0=800;
+range=100;
+lmax=lam0+range/2;
+lmin=lam0-range/2;
+dl=range/N;
+lam=[lmin:dl:lmax];
+w=equally_spaced_w(lam);
+w0=median(w);
+
+% the bandwidth
+
+
+% the e-field is:
+Ew=exp(-((w-w0)/(2*bw)).^2)

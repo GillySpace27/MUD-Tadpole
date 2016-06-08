@@ -1,0 +1,13 @@
+% This function crops out the high frequencies of the 
+% retrieved spectra:
+% Ew = the retrieved spectra in freq
+% L = the size of the alloweed window in freq space
+% num0 = the initial cut-off value
+
+function []=crop_high_freq(Ew,L,num0)
+N=size(Ew,2);
+Ew1=zeros(size(Ew));
+x=0;
+for k=1:N
+    Ew1(:,k)=Ew([num0:num0+L],k);
+end

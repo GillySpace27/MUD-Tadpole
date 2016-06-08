@@ -1,0 +1,15 @@
+% This function gets rid of the spectral phase ambiguity by matching up the values
+% of the phase to that of the previous window's retrieved phase:
+% g1 = the beginning point
+
+
+function [phase,offset]=spectral_phase_offset(U1,g1)
+phase=(angle(U1));
+N=size(phase,2);
+% the size of each window is:
+z=length(phase(:,1));
+for k=1:N-1
+    % the offset of the initial phase value is:
+    offset(k)=phase(g1,k+1)-phase(g1(k),k);
+    phase(:,k+1)=phase(:,k+1)-offset(k);
+end

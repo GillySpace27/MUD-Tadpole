@@ -1,0 +1,34 @@
+% This function takes an MUD trace and labels and plots it
+% I1 = the retrieved MUD trace
+% dl = the wavelength calibration (nm)
+% lam0 = center wavelength (nm)
+% t_f = the retrieved time axis
+
+
+function MUD_imlabel(I1,dl,dtau,Ew1,lam0,varargin)
+Nlam=size(I1,2);
+Ntau=size(I1,1);
+% making the delay axis:
+
+ranget=dtau*size(Ew1,1);
+dtau=ranget/Ntau;
+tau=(-Ntau/2:Ntau/2-1)*dtau;
+lam=lam_axis(dl,Nlam,lam0);
+figure('Color','w');
+imagesc(lam,tau*1e-3,Norm(I1))
+set(gca,'FontSize',16);
+    if nargin==5
+        title([varargin{1}],'fontsize',16);
+    else
+        title('The Reference Pulse After the Spectrometer','fontsize',16);
+        %title('The Reference Pulses Before the Spectrometer','fontsize',20,'fontweight','b');
+    end
+%    ylabel('Position (mm)','fontsize',20,'fontweight','b');
+   xlabel('Wavelength (nm)','fontsize',16);
+    %set(gca,'ytick',[200 400 500 600 700 800 1000])
+    ylabel('Delay (ps)','fontsize',16);
+    %xlabel('Time (ps)','fontsize',20,'fontweight','b');
+    set(gca,'fontsize',16);
+set(gca,'box','on','linewidth',2.5)
+colormap('jet');
+colorbar('box','on','linewidth',2.5,'fontsize',16);
